@@ -15,6 +15,7 @@ function getValores(){
 }
 
 export function valorTotal(kgs,valor,id){
+    console.log("Passei aqui");
     resultadoMandioca = kgs * valor;
     document.getElementById(id).innerHTML = resultadoMandioca;
     return resultadoMandioca;
