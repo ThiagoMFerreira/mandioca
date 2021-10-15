@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+    text-align:left;
+}
+
+output{
+    font-weight: bold;
+}
+
+input {
+    width: 10%;
+}
+
+.mandioca{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.combustivel{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.mandioca-combustivel{
+    text-align:center;
+}
+
+.maps{
+    font-size: small;
+    font-style: italic;
+    text-align: center;
+}
+
+
+
+
+

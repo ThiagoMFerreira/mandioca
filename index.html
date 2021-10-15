@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mandioca</title>
+    <link rel="icon" href="/images/fav-icon.png">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Calculadora Mandioca</title>
 </head>
 <body>
-    <section name='Mandioca'>
+    <div class="container">
+    <section name='Mandioca' class="mandioca">
         <div name="comCasca">
-            <label for="kgsComCasca">Quantidade de Kgs de Mandioca com casca:</label> <br>
+            <label for="kgsComCasca">Quantidade de Kgs de Mandioca com casca:</label> 
             <input type="number" name="kgsComCasca" min="0"> <br>
-            <label for="valorComCasca">Valor do Kg da Mandioca com casca:</label> <br>
+            <label for="valorComCasca">Valor do Kg da Mandioca com casca:</label> 
             <input type="number" name="valorComCasca" min="0">
         </div>
         <div name="semCasca">
-            <label for="kgsSemCasca">Quantidade de Kgs de Mandioca sem casca:</label> <br>
+            <label for="kgsSemCasca">Quantidade de Kgs de Mandioca sem casca:</label>
             <input type="number" name="kgsSemCasca" min="0"> <br>
-            <label for="valorSemCasca">Valor do Kg da Mandioca sem casca:</label> <br>
+            <label for="valorSemCasca">Valor do Kg da Mandioca sem casca:</label> 
             <input type="number" name="valorSemCasca" min="0">
         </div>        
         <button onclick="displayResult()">Calcular</button> 
@@ -28,40 +31,39 @@
         <div name="resultadoSemCasca">
             <label for="valorTotalComCasca"> Valor Total Sem Casca é R$:</label>
             <output id="resultadoSemCasca"></output>
-        </div>
-        
+        </div>        
     </section>
-    <section name='Combustivel'>
-        <div> <br>
-            <br>
-            <label for="litrosKm"> Informe a quantida de litros consumido por Km do carro:</label>
+    <section name='Combustivel' class="combustivel">
+        <div> 
+            <label for="litrosKm"> Informe a quantida de litros consumido por Km do carro:</label> 
             <input type="number" name="litrosKm" value="8" min="0"> <br>
-            <label for="kms"> Informe a quantidade de Kms que sera percorrida:</label>
-            <input type="number" name="kms" value="12" min="0">
-            <p>Veja a quantidade de Kms a ser percorrida com ajuda do 
+            <label for="kms"> Informe a quantidade de Kms que sera percorrida:</label> 
+            <input type="number" name="kms" value="12" min="0" width="4"> <br>
+            <label class="maps">Veja a quantidade de Kms a ser percorrida com ajuda do 
                 <a href=
                 "https://www.google.com.br/maps/dir/R.+Am%C3%A9lia+Pereira+de+Melo+-+Parque+Res.+Vila+Uni%C3%A3o,+Campinas+-+SP,+13060-717,+Brasil//@-22.9344019,-47.1340893,15z/data=!3m1!4b1!4m9!4m8!1m5!1m1!1s0x94c8c83ce8697639:0x88e712513c8e8f62!2m2!1d-47.1253345!2d-22.9344219!1m0!3e0" 
-                target="blank"> google maps</a> </p>             
-            <label for="precoLitro"> Informe o valor do litro do combustivel:</label> 
+                target="blank"> google maps</a> </label> <br> <br>     
+            <label for="precoLitro"> Informe o valor do litro do combustivel:</label>  
             <input type="number" name="precoLitro" value="5.22" min="0"><br>
-            <button onclick="displayResultCombustivel()">Calcular</button> 
+            <button onclick="displayResultCombustivel()">Calcular</button>  <br>
             <br>
-            <label for="valorCombustivel"> Valor a ser gasto com combustivel é:</label>
+            <label for="valorCombustivel"> Valor a ser gasto com combustivel é R$:</label>
             <output id="resultadoCombustivel"></output>
+        </div>        
+    </section>
+   
+    </div>
+    <div name='Mandioca-Combustvel' class="mandioca-combustivel">
+            <br>
+            <button onclick="valoresTotais()">Calcular Mandioca + Combustivel</button> <br>
+            <label for="totalMandiocaCombustivel"> Total do valor da mandioca com casca + combustivel é R$:</label>
+            <output id="resultadoMandiocaComCascaCombustivel"></output> <br>
+            <label for="totalMandiocaCombustivel"> Total do valor da mandioca sem casca + combustivel é R$:</label>
+            <output id="resultadoMandiocaSemCascaCombustivel"></output>           
         </div>
-        
-    </section>
-    <section name='Mandioca-Combustvel'>
-        <br>
-        <button onclick="valoresTotais()">Calcular Mandioca + Combustivel</button> <br>
-        <label for="totalMandiocaCombustivel"> Total do valor da mandioca com casca + combustivel é:</label>
-        <output id="resultadoMandiocaComCascaCombustivel"></output> <br>
-        <label for="totalMandiocaCombustivel"> Total do valor da mandioca sem casca + combustivel é:</label>
-        <output id="resultadoMandiocaSemCascaCombustivel"></output>           
-    </section>
-   <!--<script type="text/javascript" src="index.js"></script>
-     <script src="./calculoMandioca.js"></script>
-     <script src="./calculoCombustivel.js"></script> -->
-    <script src="./calculaValoresTotais.js"></script> 
+    <script type="text/javascript" src="index.js"></script>
+     <!-- <script src="./calculoMandioca.js"></script>
+     <script src="./calculoCombustivel.js"></script> 
+    <script src="./calculaValoresTotais.js"></script> -->
 </body>
 </html>
