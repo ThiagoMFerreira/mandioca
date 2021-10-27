@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/combustivel.png">
+    <link rel="stylesheet" href="./css/combustivel.css">
+    <title>Combustível</title>
+    <nav>
+        <a href="./index.html"> <img src="./images/home.jpg" alt="Home"></a>        
+        <a href="./combustivel.html"> <img src="./images/combustivel.png" alt="Combustivel"></a>
+    </nav>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="qualCombustivel">
+            <h3>Qual Combustível usar? Álcool x Gasolina</h3>
+            <label>Insira o valor do litro do álcool R$:</label>
+            <input type="number" min="0" name="valorAlcool" value="4.99"> <br>
+            <label>Insira o valor do litro da Gasolina R$:</label>
+            <input type="number" min="0" name="valorGasolina" value="6.22"> <br>
+            <button onclick="displayQualCombustivel()">Calcular</button> <br>
+            <br>
+            <strong>O melhor combustível a ser usado atualmente é:</strong>
+            <output id="resultadoAlcoolGasolina"></output>
+        </div>
+        <div class="qualTrajeto">
+            <h3>Qual Trajeto gasta menos combustível?</h3>
+            <label for="tipoTrajeto"> Qual é tipo do trajeto A?</label>
+            <select name="tipoTrajetoA" id="tipoTrajetoA">
+                <option value="cidade">Cidade</option>
+                <option value="misto">Misto</option>
+                <option value="rodovia">Rodovia</option>
+            </select> <br>
+            <label>Insira quantos Kms tem o trajeto A:</label>
+            <input type="number" min="0" max="5" name="trajetoA"> <br>
+            <label for="tipoTrajeto"> Qual é tipo do trajeto B?</label>
+            <select name="tipoTrajetoB" id="tipoTrajetoB">
+                <option value="cidade">Cidade</option>
+                <option value="misto">Misto</option>
+                <option value="rodovia">Rodovia</option>
+            </select> <br>
+            <label>Insira quantos Kms tem o trajeto B:</label>
+            <input type="number" min="0" max="5" name="trajetoB"> <br>
+            <label class="maps">Veja a quantidade de Kms a ser percorrida com ajuda do 
+                <a href=
+                "https://www.google.com.br/maps/dir/R.+Alcedino+Fernandes+de+Mendon%C3%A7a+-+Jardim+Ipaussurama,+Campinas+-+SP,+Brasil//@-22.929323,-47.1236067,16z/data=!4m9!4m8!1m5!1m1!1s0x94c8c83f090fc7bf:0x11d85aa36f45f5d6!2m2!1d-47.1192293!2d-22.9293329!1m0!3e0" 
+                target="blank"> google maps</a> </label> <br> <br> 
+            <button onclick="displayMelhorTrajeto()">Verificar!</button> <br>
+            <br>
+            <strong>O trajeto que gasta menos combustível é:</strong>
+            <output id="resultadoTrajeto"></output>
+        </div>
+    </div>    
+    <script type="text/javascript" src="./script/combustivel.js"></script>
+</body>
+</html>

@@ -3,12 +3,22 @@
     text-align:left;
 }
 
+nav{
+    text-align: center;
+}
+
 output{
     font-weight: bold;
 }
 
 input {
     width: 40px;
+}
+
+img{
+    padding-left: 30px;
+    width: 40px; /* you can use % */
+    height: auto;
 }
 
 .mandioca{

@@ -7,6 +7,11 @@
     <link rel="icon" href="./images/fav-icon.png">
     <link rel="stylesheet" href="./css/index.css">
     <title>Calculadora Mandioca</title>
+    <nav>
+        <a href="./index.html"> <img src="./images/home.jpg" alt="Home"></a>        
+        <a href="./combustivel.html"> <img src="./images/combustivel.png" alt="Combustivel"></a>
+    </nav>
+
 </head>
 <body>
     <div class="container">
@@ -36,15 +41,15 @@
     <section name='Combustivel' class="combustivel">
         <div> 
             <label for="litrosKm"> Informe a quantida de litros consumido por Km do carro:</label> 
-            <input type="number" name="litrosKm" value="8" min="0"> <br>
+            <input type="number" name="litrosKm" value="13" min="0"> <br>
             <label for="kms"> Informe a quantidade de Kms que sera percorrida:</label> 
             <input type="number" name="kms" value="12" min="0" width="4"> <br>
             <label class="maps">Veja a quantidade de Kms a ser percorrida com ajuda do 
                 <a href=
-                "https://www.google.com.br/maps/dir/R.+Am%C3%A9lia+Pereira+de+Melo+-+Parque+Res.+Vila+Uni%C3%A3o,+Campinas+-+SP,+13060-717,+Brasil//@-22.9344019,-47.1340893,15z/data=!3m1!4b1!4m9!4m8!1m5!1m1!1s0x94c8c83ce8697639:0x88e712513c8e8f62!2m2!1d-47.1253345!2d-22.9344219!1m0!3e0" 
+                "https://www.google.com.br/maps/dir/R.+Alcedino+Fernandes+de+Mendon%C3%A7a+-+Jardim+Ipaussurama,+Campinas+-+SP,+Brasil//@-22.929323,-47.1236067,16z/data=!4m9!4m8!1m5!1m1!1s0x94c8c83f090fc7bf:0x11d85aa36f45f5d6!2m2!1d-47.1192293!2d-22.9293329!1m0!3e0" 
                 target="blank"> google maps</a> </label> <br> <br>     
             <label for="precoLitro"> Informe o valor do litro do combustivel:</label>  
-            <input type="number" name="precoLitro" value="5.22" min="0"><br>
+            <input type="number" name="precoLitro" value="6.22" min="0"><br>
             <button onclick="displayResultCombustivel()">Calcular</button>  <br>
             <br>
             <label for="valorCombustivel"> Valor a ser gasto com combustivel é R$:</label>
@@ -54,14 +59,14 @@
    
     </div>
     <div name='Mandioca-Combustvel' class="mandioca-combustivel">
-            <br>
-            <button onclick="valoresTotais()">Calcular Mandioca + Combustivel</button> <br>
-            <label for="totalMandiocaCombustivel"> Total do valor da mandioca com casca + combustivel é R$:</label>
-            <output id="resultadoMandiocaComCascaCombustivel"></output> <br>
-            <label for="totalMandiocaCombustivel"> Total do valor da mandioca sem casca + combustivel é R$:</label>
-            <output id="resultadoMandiocaSemCascaCombustivel"></output>           
-        </div>
-    <script type="text/javascript" src="index.js"></script>
+        <br>
+        <button onclick="valoresTotais()">Calcular Mandioca + Combustivel</button> <br>
+        <label for="totalMandiocaCombustivel"> Total do valor da mandioca com casca + combustivel é R$:</label>
+        <output id="resultadoMandiocaComCascaCombustivel"></output> <br>
+        <label for="totalMandiocaCombustivel"> Total do valor da mandioca sem casca + combustivel é R$:</label>
+        <output id="resultadoMandiocaSemCascaCombustivel"></output>           
+    </div>    
+    <script type="text/javascript" src="./script/index.js"></script>
      <!-- <script src="./calculoMandioca.js"></script>
      <script src="./calculoCombustivel.js"></script> 
     <script src="./calculaValoresTotais.js"></script> -->
