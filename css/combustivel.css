@@ -1,0 +1,48 @@
+
+nav{
+    text-align: center;
+}
+
+img{
+    padding-left: 30px;
+    width: 40px; /* you can use % */
+    height: auto;
+}
+
+label{
+    display: inline-block;
+    clear: left;
+    width: 75%;
+    text-align: left;
+}
+
+input {
+    width: 50px;
+}
+
+output {
+    color: green;
+    font-weight: bold;
+}
+
+.mainContainer{
+    display: flex;
+    text-align:left;
+}
+
+.qualCombustivel{
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-right: 10%;
+}
+
+.qualTrajeto{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.maps{
+    font-size: small;
+    font-style: italic;
+    text-align: center;
+}
