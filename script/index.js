@@ -3,6 +3,25 @@ let valorComCasca;
 let kgsSemCasca;
 let valorSemCasca;
 
+function displayResult(){
+    getValores();
+    valorTotal(kgsComCasca,valorComCasca,"resultadoComCasca");
+    valorTotal(kgsSemCasca,valorSemCasca,"resultadoSemCasca");
+}
+
+function valoresTotais(){
+    getValores();    
+    semCasca = valorTotal(kgsSemCasca,valorSemCasca,"resultadoSemCasca");
+    comCasca = valorTotal(kgsComCasca,valorComCasca,"resultadoComCasca");
+    getValoresComb();    
+    combustivel = gastoCombustivel();
+    resultadoSemCasca = semCasca + combustivel;
+    resultadoComCasca = comCasca + combustivel;
+    document.getElementById("resultadoMandiocaSemCascaCombustivel").innerHTML = resultadoSemCasca;
+    document.getElementById("resultadoMandiocaComCascaCombustivel").innerHTML = resultadoComCasca;
+}
+
+
 function getValores(){
     kgsComCasca = document.querySelector('[name=kgsComCasca]').value;
     kgsComCasca = parseFloat(kgsComCasca);
@@ -20,10 +39,9 @@ function valorTotal(kgs,valor,id){
     return resultadoMandioca;
 }
 
-function displayResult(){
-    getValores();
-    valorTotal(kgsComCasca,valorComCasca,"resultadoComCasca");
-    valorTotal(kgsSemCasca,valorSemCasca,"resultadoSemCasca");
+function displayResultCombustivel(){
+    getValoresComb();
+    gastoCombustivel();
 }
 
 let litrosKm;
@@ -44,21 +62,4 @@ function gastoCombustivel(){
     resultadoCombustivel = resultadoCombustivel * precoLitro;
     document.getElementById("resultadoCombustivel").innerHTML = resultadoCombustivel;
     return resultadoCombustivel;
-}
-
-function displayResultCombustivel(){
-    getValoresComb();
-    gastoCombustivel();
-}
-
-function valoresTotais(){
-    getValores();    
-    semCasca = valorTotal(kgsSemCasca,valorSemCasca,"resultadoSemCasca");
-    comCasca = valorTotal(kgsComCasca,valorComCasca,"resultadoComCasca");
-    getValoresComb();    
-    combustivel = gastoCombustivel();
-    resultadoSemCasca = semCasca + combustivel;
-    resultadoComCasca = comCasca + combustivel;
-    document.getElementById("resultadoMandiocaSemCascaCombustivel").innerHTML = resultadoSemCasca;
-    document.getElementById("resultadoMandiocaComCascaCombustivel").innerHTML = resultadoComCasca;
 }
