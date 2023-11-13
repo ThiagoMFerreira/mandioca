@@ -7,11 +7,32 @@ let tipoTrajetoB;
 let trajetoA;
 let trajetoB;
 
+function displayQualCombustivel(){
+    getValoresCombustivel();
+    combustivel = getAlcoolOuGasolina();
+    document.getElementById("resultadoAlcoolGasolina").innerHTML = combustivel;
+}
+
 function getValoresCombustivel(){
-    valorAlcool = document.querySelector('[name=valorAlcool]').value;
-    valorAlcool = parseFloat(valorAlcool);
-    valorGasolina = document.querySelector('[name=valorGasolina]').value;
-    valorGasolina = parseFloat(valorGasolina);
+    valorAlcool = parseFloat(document.querySelector('[name=valorAlcool]').value);
+    valorGasolina = parseFloat(document.querySelector('[name=valorGasolina]').value);
+}
+
+function getAlcoolOuGasolina(){
+    resultado = valorAlcool / valorGasolina;
+    if(resultado <= 0.72){
+        return resultadoCombustivel = 'Álcool'; 
+    }
+    else{
+        return resultadoCombustivel = 'Gasolina';
+
+    }
+}
+
+function displayMelhorTrajeto(){
+    getValoresTrajetos();
+    trajeto  = getMelhorTrajeto();
+    document.getElementById("resultadoTrajeto").innerHTML = trajeto;
 }
 
 function getValoresTrajetos(){
@@ -19,32 +40,25 @@ function getValoresTrajetos(){
     tipoTrajetoA = tipoTrajetoA.options[tipoTrajetoA.selectedIndex].text;
     tipoTrajetoB = document.getElementById("tipoTrajetoB");
     tipoTrajetoB = tipoTrajetoB.options[tipoTrajetoB.selectedIndex].text;
-    trajetoA = document.querySelector('[name=trajetoA]').value;
-    trajetoA = parseFloat(trajetoA);
-    trajetoB = document.querySelector('[name=trajetoB]').value;
-    trajetoB = parseFloat(trajetoB);
+    trajetoA = parseFloat(document.querySelector('[name=trajetoA]').value);
+    trajetoB = parseFloat(document.querySelector('[name=trajetoB]').value);
 }
 
-function qualCombustivelUsar(){
-    resultado = valorAlcool / valorGasolina;
-    if(resultado <= 0.72){
-        resultadoCombustivel = 'Álcool'; 
+function getMelhorTrajeto(){
+    resultadoA = getLitrosUsadoNoTrajeto(tipoTrajetoA,trajetoA);
+    resultadoB = getLitrosUsadoNoTrajeto(tipoTrajetoB,trajetoB);
+    if(resultadoA < resultadoB){
+        return melhorTrajeto = "Trajeto A";
     }
-    else{
-        resultadoCombustivel = 'Gasolina';
-
+    else if(resultadoA == resultadoB){
+        return melhorTrajeto = "Ambos trajeto vão gastar a mesma quantidade de combustível";
     }
-
-    return resultadoCombustivel;
+    else {
+        return melhorTrajeto = "Trajeto B";
+    }
 }
 
-function displayQualCombustivel(){
-    getValoresCombustivel();
-    combustivel = qualCombustivelUsar();
-    document.getElementById("resultadoAlcoolGasolina").innerHTML = combustivel;
-}
-
-function litrosTrajeto(tipoTrajetoUsado,kmsTrajeto){
+function getLitrosUsadoNoTrajeto(tipoTrajetoUsado,kmsTrajeto){
     if(tipoTrajetoUsado === "Cidade"){
         return resultado = kmsTrajeto/9.2
     }
@@ -55,23 +69,4 @@ function litrosTrajeto(tipoTrajetoUsado,kmsTrajeto){
        return resultado = kmsTrajeto/13.5
     } 
     
-}
-
-function qualTrajeto(){
-    resultadoA = litrosTrajeto(tipoTrajetoA,trajetoA);
-    resultadoB = litrosTrajeto(tipoTrajetoB,trajetoB);
-    if(resultadoA < resultadoB){
-        melhorTrajeto = "Trajeto A";
-    }
-    else{
-        melhorTrajeto = "Trajeto B";
-    }
-
-    return melhorTrajeto;
-}
-
-function displayMelhorTrajeto(){
-    getValoresTrajetos();
-    trajeto  = qualTrajeto();
-    document.getElementById("resultadoTrajeto").innerHTML = trajeto;
 }
